@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Vista lista de camiones -->
+    <record id="view_paqueteria_camion_list" model="ir.ui.view">
+        <field name="name">paqueteria_camion.list</field>
+        <field name="model">paqueteria_camion</field>
+        <field name="arch" type="xml">
+            <list string="Camiones">
+    <field name="plate"/>
+    <field name="current_driver_id"/>
+    <field name="last_itv_date"/>
+</list>
+
+        </field>
+    </record>
+
+    <!-- Vista formulario de camiones -->
+    <record id="view_paqueteria_camion_form" model="ir.ui.view">
+        <field name="name">paqueteria_camion.form</field>
+        <field name="model">paqueteria_camion</field>
+        <field name="arch" type="xml">
+            <form string="Camión">
+                <sheet>
+                    <group string="Datos del camión">
+                        <field name="plate"/>
+                        <field name="current_driver_id"/>
+                        <field name="last_itv_date"/>
+                    </group>
+
+                    <group string="Conductores">
+                        <field name="previous_driver_ids"/>
+                    </group>
+
+                    <group string="Mantenimiento">
+                        <field name="maintenance_notes"/>
+                    </group>
+
+                    <group string="Paquetes transportados">
+                        <field name="package_ids">
+                            <list>
+                                <field name="tracking_number"/>
+                                <field name="sender_id"/>
+                                <field name="recipient_id"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+    <record id="action_paqueteria_camion" model="ir.actions.act_window">
+        <field name="name">Camiones</field>
+        <field name="res_model">paqueteria_camion</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

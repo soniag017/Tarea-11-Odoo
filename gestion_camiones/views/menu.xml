@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    
+    <menuitem id="menu_gestion_camiones_root" name="Gestión de camiones"/>
+
+    
+    <menuitem id="menu_gestion_camiones_paquetes"
+              name="Paquetes"
+              parent="menu_gestion_camiones_root"
+              action="action_paqueteria_paquete"/>
+
+    
+    <menuitem id="menu_gestion_camiones_camiones"
+              name="Camiones"
+              parent="menu_gestion_camiones_root"
+              action="action_paqueteria_camion"/>
+</odoo>
